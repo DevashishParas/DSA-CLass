@@ -22,8 +22,6 @@ public:
                 ans[i]=leftproduct[i]*rightproduct[i];
 
             }
-             return ans;
-        }
-        
-        }
-    
+            return ans;
+    }
+}
