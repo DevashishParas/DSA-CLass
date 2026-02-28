@@ -1,5 +1,6 @@
 class Solution {
  public:
+ #include<vector>
   vector<vector<int>> generate(int numRows) {
     vector<vector<int>> ans;
 
