@@ -1,5 +1,6 @@
 class Solution {
 public:
+#include<vector>
     void rotate(vector<vector<int>>& matrix) {
         int n=matrix.size();
         int m=matrix[0].size();
