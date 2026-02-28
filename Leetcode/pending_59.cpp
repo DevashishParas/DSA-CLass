@@ -2,7 +2,6 @@ class Solution {
 public:
 #include<vector>
 
-
     vector<vector<int>> generateMatrix(int n) {
         vector<vector<int>> arr(n,vector<int>(n));
         int left=0,right=n-1,top=0,bottom=n-1,val=1;

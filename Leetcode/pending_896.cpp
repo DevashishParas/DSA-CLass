@@ -1,5 +1,6 @@
 class Solution {
 public:
+#include<vector>
     bool isMonotonic(vector<int>& nums) {
         bool inc=true;
         bool dec=true;
