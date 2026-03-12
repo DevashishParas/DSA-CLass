@@ -1,27 +1,15 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i = 0;
 
-int removeDuplicates(vector<int>& nums) {
-    if (nums.empty()) return 0;
-    
-    int i = 0;
-    for (int j = 1; j < nums.size(); j++) {
-        if (i == 0 || i == 1 || nums[j] != nums[i - 1]) {
-            nums[++i] = nums[j];
+        for (int j = 0; j < nums.size(); j++) {
+            if (i < 2 || nums[j] != nums[i - 2]) {
+                nums[i] = nums[j];
+                i++;
+            }
         }
-    }
-    return i + 1;
-}
 
-int main() {
-    vector<int> nums = {1,1,1,2,2,3};
-    int k = removeDuplicates(nums);
-    cout << "k = " << k << endl;
-    cout << "Array: ";
-    for (int i = 0; i < k; i++) {
-        cout << nums[i] << " ";
+        return i;
     }
-    cout << endl;
-    return 0;
-}
+};
