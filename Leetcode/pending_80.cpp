@@ -1,5 +1,7 @@
 class Solution {
 public:
+#include<vector>
+
     int removeDuplicates(vector<int>& nums) {
         int i = 0;
 
@@ -12,4 +14,4 @@ public:
 
         return i;
     }
-};
+}
