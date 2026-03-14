@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     bool isAnagram(string s, string t) {
 
         int freq[26]={0};
