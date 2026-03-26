@@ -22,4 +22,4 @@ int main() {
     vector<int> nums={1,2,2,3};
     cout<<isMonotonic(nums)<<endl;
     return 0;
-}
+};
