@@ -35,4 +35,6 @@ int main() {
     cout << endl;
     
     return 0;
-}
+};k,kihnyfck,kmjbfawcrxscftggygfrswhgdeswauhfdhfrcsxw
+_GLIBCXX_USE_C99_STDLIBjgbvjn
+njb has_facet
