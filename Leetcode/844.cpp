@@ -22,6 +22,7 @@ public:
                     break;
                 }
             }
+            // here is using valid character [ char ] for initialization 
 
             // Find next valid char in t
             while (j >= 0) {
@@ -58,4 +59,4 @@ public:
         return true;
     }
 };
-        
+    
