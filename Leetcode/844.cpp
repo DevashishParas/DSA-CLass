@@ -22,7 +22,10 @@ public:
                     break;
                 }
             }
-            // here is using valid character [ char ] for initialization 
+            // here is using valid character [ char ] for initialization but before that 
+
+            // if (j >=0) { if (t[j] == '#') {
+            // skipT++ ; j--; } else {break }}
 
             // Find next valid char in t
             while (j >= 0) {
