@@ -1,0 +1,7 @@
+css
+
+absolute 
+relative 
+box model- content , padding, border. margin     ,   top, right,  bottom, left 
+
+pseudo elements
