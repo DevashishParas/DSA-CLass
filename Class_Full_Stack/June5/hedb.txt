@@ -1,0 +1,17 @@
+- CSS coimbinators 
+
+
+Descendent 
+child 
+adjacent sibling 
+general sibling
+
+
+- positions
+
+static position
+relative position
+absolute position
+fixed position
+
+
