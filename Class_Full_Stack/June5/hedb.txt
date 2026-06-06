@@ -16,4 +16,10 @@ fixed position
 sticky position
 
 
+- styling 
 
+
+    navigation styling 
+
+
+    
