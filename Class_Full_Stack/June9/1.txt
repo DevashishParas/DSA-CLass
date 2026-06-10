@@ -1,2 +1,17 @@
 - learn to write boilerplate code.
 
+- media queries 
+
+        min-width
+        max-width
+        range query
+
+
+        hover
+        transitions
+
+
+- css 3d transform
+
+- css animators
+    key frames
