@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:#ececec;
+}
+
+/* NAVBAR */
+
+.custom-navbar{
+    height:70px;
+    background:linear-gradient(
+        90deg,
+        #00c9d7,
+        #6a11cb
+    );
+}
+
+/* LAYOUT */
+
+.main-wrapper{
+    display:flex;
+    height:calc(100vh - 70px);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:330px;
+    background:white;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.template-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.template-card{
+    height:110px;
+    background:#ddd;
+    border-radius:10px;
+}
+
+/* WORKSPACE */
+
+.workspace{
+    flex:1;
+    position:relative;
+    padding:40px;
+}
+
+/* TOOLBAR */
+
+.toolbar{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:white;
+    border-radius:50px;
+    padding:10px 20px;
+    z-index:10;
+}
+
+/* CANVAS */
+
+.canvas{
+    width:1000px;
+    height:620px;
+    background:white;
+    margin:60px auto;
+    padding:60px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:80px;
+}
+
+/* SHAPES */
+
+.circle{
+    width:180px;
+    height:180px;
+    background:#b8f56a;
+    border-radius:50%;
+}
+
+.square{
+    width:180px;
+    height:180px;
+    background:#f2db5d;
+}
+
+.triangle{
+    width:0;
+    height:0;
+    border-left:90px solid transparent;
+    border-right:90px solid transparent;
+    border-bottom:180px solid #ff7419;
+}
+
+.pentagon{
+    width:170px;
+    height:170px;
+    background:#2100b5;
+    clip-path:polygon(
+        50% 0%,
+        100% 38%,
+        82% 100%,
+        18% 100%,
+        0% 38%
+    );
+}
+
+.plus{
+    width:180px;
+    height:180px;
+    background:black;
+    clip-path:polygon(
+        35% 0,
+        65% 0,
+        65% 35%,
+        100% 35%,
+        100% 65%,
+        65% 65%,
+        65% 100%,
+        35% 100%,
+        35% 65%,
+        0 65%,
+        0 35%,
+        35% 35%
+    );
+}
+
+.parallelogram{
+    width:220px;
+    height:180px;
+    background:#bf69d8;
+    transform:skew(-15deg);
+}
+
+.arrow-up{
+    width:150px;
+    height:180px;
+    background:#7b4eff;
+    clip-path:polygon(
+        50% 0%,
+        100% 50%,
+        75% 50%,
+        75% 100%,
+        25% 100%,
+        25% 50%,
+        0% 50%
+    );
+}
+
+.heart{
+    width:180px;
+    height:180px;
+    background:red;
+    clip-path:path(
+        "M90 160
+        L20 90
+        A40 40 0 1 1 90 40
+        A40 40 0 1 1 160 90
+        Z"
+    );
+}
