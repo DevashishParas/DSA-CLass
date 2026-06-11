@@ -1,60 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Canva Clone</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="canva.css">
 </head>
+
 <body>
-    
-    <div class="main">
-        <div class="nav">
 
-            <div class="lcontent">
-                 <span>File</span>
-                 <span>Resize</span>
-                 <span>&#128393; Editing &#9660;</span>
-                 <span>&#8630; &nbsp; &#8631;</span>
-                 <span></span>
-                 <span></span>
-            </div>
+    <!-- navigation bar -->
 
-            <div class="rcontent">
+    <nav class="navbar">
 
-                <span>Sample</span>
-                <span>&#128081; Start your trial for &#8377;0</span>
-                <span><img src="#"></span>
-                <span> &#128246;</span>
-                <span></span>
-                <span>Present &#9660; </span>
-                <span>Share</span>
-            </div>
+        <div class="left">
+            <a href="#">File</a>
+            <a href="#">Resize</a>
+            <a href="#">Editing</a>
         </div>
 
-        <div class="lbox">
-            <div class="left">
+        <div class="center">
+            Sample
+        </div>
 
-                <div class="left1">
-                   <img src="image1.png" height="50px" width="80px"><span>Templates</span>
-                   <img src="image2.png" height="50px" width="80px"><span>Elements</span>
-                   <img src="image3.png" height="50px" width="80px"><span>Text</span>
-                   <img src="image4.png" height="50px" width="80px"><span>Brand</span>
-                   <img src="image5.png" height="50px" width="80px"><span>Uploads</span>
-                   <img src="image6.png" height="50px" width="80px"><span>Tools</span>
-                   <img src="image7.png" height="50px" width="80px"><span>Projects</span>
-                   <img src="image8.png" height="50px" width="80px"><span>Apps</span>
-                   <img src="image9.png" height="50px" width="80px"><span>Magic Media</span>
-                   <img src="image10.png" height="50px" width="80px"><span>Audio</span>
-                   <img src="image11.png"height="50px" width="80px"><span>Videoforme</span>
-                
+        <div class="right">
+
+            <button class="trial-btn">
+                👑 Start your trial for ₹0
+            </button>
+
+            <div class="profile">
+               
+
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="icon-box">
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+
+            <div class="icon-box">
+                <i class="fa-regular fa-comment"></i>
+            </div>
+
+            <button class="present-btn">
+                Present
+            </button>
+
+            <button class="share-btn">
+                Share
+            </button>
+
+        </div>
+
+    </nav>
+
+  
+
+    <div class="main">
+
+      
+
+        <div class="menu">
+
+            <div class="item">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Templates</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-shapes"></i>
+                <span>Elements</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-font"></i>
+                <span>Text</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-image"></i>
+                <span>Uploads</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-pen"></i>
+                <span>tool</span>
+            </div>
+               <div class="item">
+                <i class="fa-solid fa-folder"></i>
+                <span>project</span>
+            </div>
+           <div class="item">
+                <i class="fa-solid  fa-border-all"></i>
+                <span>app</span>
+            </div>
+            
+            <div class="item">
+                <i class="fa-solid fa-image"></i>
+                <span>magic media</span>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-music"></i>
+                <span>audio</span>
+            </div>
+               <div class="item">
+                <i class="fa-solid fa-border-none"></i>
+                <span>vidoforme</span>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar">
+
+            <div class="search-box">
+                <input type="text" placeholder="Describe your ideal design">
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+
+            <div class="buttons">
+
+                <button class="generate">
+                    Generate
+                </button>
+
+                <button class="search">
+                    Search
+                </button>
+
+            </div>
+
+            <h3>Recently Used</h3>
+
+            <div class="gallery">
+                <img src="https://picsum.photos/200/120?1">
+                <img src="https://picsum.photos/200/120?2">
+                <img src="https://picsum.photos/200/120?3">
+                <img src="https://picsum.photos/200/120?4">
+                 <img src="https://picsum.photos/200/120?1">
+                <img src="https://picsum.photos/200/120?2">
+                <img src="https://picsum.photos/200/120?3">
+                <img src="https://picsum.photos/200/120?4">
+                <img src="https://picsum.photos/200/120?2">
+                <img src="https://picsum.photos/200/120?3">
+                <img src="https://picsum.photos/200/120?4">
+            </div>
+
+        </div>
+
+
+        <div class="workspace">
+
+            <div class="canvas">
+
+                <div class="shape-circle"></div>
+
+                <div class="square"></div>
+
+                <div class="triangle"></div>
+
+                <div class="pentagon"></div>
+
+                <div class="plus"></div>
+
+                <div class="parallelogram"></div>
+
+                <div class="arrow"></div>
+
+                <div class="heart-wrapper"></div>
+                <div class="heart"></div>
                 </div>
 
             </div>
+
         </div>
+
     </div>
 
-
 </body>
+
 </html>
