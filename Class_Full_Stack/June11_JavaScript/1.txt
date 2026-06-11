@@ -1,0 +1,65 @@
+- Java Script
+
+        features
+
+        variables
+
+             var
+             let
+             const
+        
+        Data Types
+             
+             undefined
+
+        Non-Premitive Data Types
+
+            
+        Operators
+
+            Arithmatic Operators
+            Assignment Operators
+            Comparison Operator (===);
+
+        
+        logical Operator
+
+
+        Type Casting
+
+            ANother Example 
+
+        Explicit Type Casting
+
+           ParseInt
+           ParseFloat
+
+
+        Conditions
+
+            if 
+            else
+
+        Loop
+
+
+            For of (new)
+
+
+        Scope in JS
+
+        `   Global Scope
+            Function Scope
+            Block Scope
+            Scope Comparison
+
+
+        Task 
+
+        
+
+        
+
+
+
+
