@@ -316,7 +316,7 @@ nav{
     background:#b8f56a;
     position:absolute;
     top:100px;
-    left:90px;
+    left:70px;
 }
 .square{
     width:160px;
@@ -324,17 +324,17 @@ nav{
     background:#efd55c;
     position:absolute;
     top:100px;
-    left:360px;
+    left:330px;
 }
 .triangle{
     width:0;
     height:0;
     border-left:120px solid transparent;
     border-right:120px solid transparent;
-    border-bottom:170px solid orange;
+    border-bottom:220px solid orange;
     position:absolute;
-    top:90px;
-    left:630px;
+    top:100px;
+    left:600px;
 }
 .pentagon{
     width:160px;
@@ -378,22 +378,22 @@ nav{
     width:180px;
     height:180px;
     background:#c26add;
-    transform:skew(18deg);
+    transform:skew(-18deg);
     position:absolute;
     left:360px;
     top:430px;
 }
 .arrow-up{
     width:120px;
-    height:160px;
+    height:120px;
     background:#8b5cf6;
     position:absolute;
-    left:690px;
+    left:720px;
     top:450px;
 }
 .arrow-up::before{
     content:"";
-    position:relative;
+    position:absolute;
     top:-80px;
     left:-40px;
     border-left:100px solid transparent;
@@ -401,25 +401,25 @@ nav{
     border-bottom:100px solid #8b5cf6;
 }
 .heart-box{
-    width:200px;
-    height:190px;
+    width:180px;
+    height:180px;
 
     border:3px solid #9b59ff;
 
     position:absolute;
 
-    right:70px;
-    top:400px;
+    right:80px;
+    top:430px;
 }
 
 .heart{
     position:absolute;
 
-    top:40px;
-    left:45px;
+    top:35px;
+    left:50px;
 
-    width:110px;
-    height:110px;
+    width:80px;
+    height:80px;
 
     background:red;
 
@@ -430,8 +430,8 @@ nav{
 .heart::after{
     content:"";
 
-    width:110px;
-    height:110px;
+    width:80px;
+    height:80px;
 
     background:red;
 
@@ -441,11 +441,11 @@ nav{
 }
 
 .heart::before{
-    top:-50px;
+    top:-40px;
     left:0;
 }
 
 .heart::after{
-    left:50px;
+    left:40px;
     top:0;
 }
