@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canvas Clone</title>
+        <link rel="stylesheet" href="style.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <!-- <nav class="bg-blue-500  text-white h-12">
+            <div class="container h-full max-w-full flex  justify-between items-center border-2 pl-4 pr-4">
+                <div class="flex flex-row gap-10 items-between pr-8 pl-8">
+                    <div>File</div>
+                    <div>Resize</div>
+                    <div>Editing</div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                </div>
+                <div class="flex flex-row justify-content items-center gap-6">
+                    <div>Sample</div>
+                    <div>Start your trial for 0$</div>
+                    <div>Present</div>
+                    <button class="border-black bg-gray-200 hover:bg-gray-300 text-black pr-2 pl-2 rounded-md">Share</button>
+                </div>
+            </div>
+        </nav> -->
+        <nav class="h-14 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white flex items-center justify-between px-6 shadow-md">
+
+    <!-- Left Side -->
+    <div class="flex items-center gap-8 text-[18px] font-semibold">
+
+        <div class="cursor-pointer hover:opacity-80">File</div>
+
+        <div class="cursor-pointer hover:opacity-80">Resize</div>
+
+        <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+            <i class="fa-solid fa-pen"></i>
+            <span>Editing</span>
+            <i class="fa-solid fa-angle-down text-sm mt-1"></i>
+        </div>
+
+        <!-- Divider -->
+        <div class="h-6 w-[1px] bg-white/40"></div>
+
+        <!-- Undo Redo -->
+        <div class="flex items-center gap-6 text-xl">
+
+            <i class="fa-solid fa-rotate-left cursor-pointer hover:scale-110 transition"></i>
+
+            <i class="fa-solid fa-rotate-right cursor-pointer hover:scale-110 transition"></i>
+
+        </div>
+
+        <!-- Divider -->
+        <div class="h-6 w-[1px] bg-white/40"></div>
+
+        <!-- Cloud -->
+        <div class="relative">
+
+            <div class="absolute -top-3 left-3 bg-pink-500 text-[10px] px-2 py-[1px] rounded-full">
+                New
+            </div>
+
+           <i class="fa-solid fa-cloud"></i>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="flex items-center gap-5">
+
+        <div class="font-semibold cursor-pointer hover:opacity-80">
+            Sample
+        </div>
+
+        <!-- Trial -->
+        <div class="bg-white/10 border border-white/20 px-5 py-2 rounded-2xl flex items-center gap-2 backdrop-blur-md">
+
+            <i class="fa-solid fa-crown text-yellow-300"></i>
+
+            <span class="font-semibold">
+                Start your trial for ₹0
+            </span>
+
+        </div>
+
+        <!-- Avatar -->
+        <div class="w-10 h-10 rounded-full bg-white-500 border-2 border-white overflow-hidden">
+            <img src="pimage1.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Icons -->
+        <div class="flex items-center gap-4 text-xl">
+
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                <i class="fa-regular fa-message"></i>
+            </div>
+
+        </div>
+
+        <!-- Present -->
+        <div class="bg-white/10 px-5 py-2 rounded-xl flex items-center gap-3 font-semibold">
+
+            <span>Present</span>
+
+            <i class="fa-solid fa-angle-down text-sm"></i>
+
+        </div>
+
+        <!-- Share -->
+        <button class="bg-white text-black font-semibold px-5 py-2 rounded-xl hover:bg-gray-100 transition">
+            Share
+        </button>
+
+    </div>
+
+</nav>
+
+        <div class="main flex flex-row h-screen w-full">
+           <div class="w-[90px] flex flex-col items-center text-gray-700">
+
+    <div class="p-6 flex flex-col items-center gap-2 text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12.81 3c3.46 0 5.192 0 6.392.901.34.255.642.557.897.897C21 5.998 21 7.73 21 11.19v1.62c0 3.46 0 5.192-.901 6.392l-.2.247q-.314.361-.697.65l-.231.158C17.779 21 16.055 21 12.81 21h-1.62l-1.22-.002c-2.475-.011-3.908-.097-4.94-.741l-.232-.158a4.5 4.5 0 0 1-.696-.65l-.2-.247C3 18.002 3 16.27 3 12.81v-1.62c0-3.46 0-5.192.901-6.392a4.5 4.5 0 0 1 .897-.897c1.05-.788 2.507-.887 5.173-.899L11.19 3zm-1.62 1.5c-1.764 0-2.965.002-3.878.104-.884.098-1.315.273-1.613.497-.226.17-.428.372-.598.598-.224.298-.4.73-.497 1.613-.102.913-.104 2.114-.104 3.878v1.62c0 1.764.002 2.965.104 3.879.098.883.273 1.314.497 1.612.17.226.372.428.598.598.298.224.73.4 1.613.497.913.102 2.114.104 3.878.104h1.62l.83-.002-.003-.066V4.568l.003-.067-.83-.001zm3.947 6.682v8.25l-.003.051a18 18 0 0 0 1.555-.087c.883-.098 1.314-.273 1.612-.497q.341-.257.598-.598c.224-.298.4-.73.497-1.612.102-.914.104-2.115.104-3.88v-1.627zm0-6.614v5.114h4.358c-.007-.984-.03-1.745-.099-2.37-.098-.884-.273-1.315-.497-1.613a3 3 0 0 0-.598-.598c-.298-.224-.73-.4-1.612-.497-.441-.05-.95-.075-1.555-.088z" clip-rule="evenodd"></path></svg>
+        <span class="font-sans  font-black">Templates</span>
+    </div>
+
+    <div class="p-6 flex flex-col items-center gap-2 text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M10.563 12.53a.35.35 0 0 1 .421.343v1.817h.004v3.61h-.004v.045q.006.037.003.075c-.036.523-.273.902-.615 1.139-.328.226-.726.304-1.079.296a1.346 1.346 0 0 1-.41-2.623l.225-.05a.5.5 0 0 0 .392-.488v-1.13l-3.677.783v3.013H5.82v.158c-.037.523-.228.91-.57 1.146-.328.226-.726.305-1.08.297a1.345 1.345 0 0 1-.41-2.623l.172-.037a.5.5 0 0 0 .394-.489V14.31c0-.248.173-.463.415-.515l.642-.139a.4.4 0 0 1 .061-.018zm6.085.005a4.213 4.213 0 1 1 0 8.426 4.213 4.213 0 0 1 0-8.426m-3.59-7.938a1.65 1.65 0 0 1 2.478-1.427l4.208 2.443.1.063a1.65 1.65 0 0 1 0 2.728l-.1.063-4.208 2.443a1.65 1.65 0 0 1-2.478-1.427zM9.13 3.062a2.694 2.694 0 0 1 2.294 4.107c-.603 1.19-1.564 2.12-2.341 2.742a12 12 0 0 1-1.34.927l-.09.052-.027.014-.008.004-.002.002a.76.76 0 0 1-.712.001h-.002l-.003-.002-.007-.005-.027-.014-.094-.053a11.855 11.855 0 0 1-1.37-.947c-.792-.637-1.77-1.594-2.364-2.816A2.694 2.694 0 0 1 7.26 3.818a2.69 2.69 0 0 1 1.87-.756"></path></svg>
+        <span class="text-gray">Elements</span>
+    </div>
+
+    <div class="p-6 flex flex-col items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.266 5.792a1.5 1.5 0 0 1 1.5-1.5h12.468a1.5 1.5 0 0 1 1.5 1.5v1.85a.75.75 0 0 1-1.5 0v-1.35a.5.5 0 0 0-.5-.5H12.75v11.939a.5.5 0 0 0 .5.5h1.875a.75.75 0 0 1 0 1.5h-6.25a.75.75 0 1 1 0-1.5h1.875a.5.5 0 0 0 .5-.5V5.792H6.266a.5.5 0 0 0-.5.5V7.67a.75.75 0 1 1-1.5 0V5.792Z" fill="currentColor"></path></svg>
+        <span>Text</span>
+    </div>
+
+    <div class="p-6 flex flex-col items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m9.096 5.927 1.546-1.297a2.501 2.501 0 0 1 2.797-.284l.142-.051a5.494 5.494 0 0 1 1.723-.331 4 4 0 0 0-5.627-.483L4.975 7.427l4.12-1.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M11.835 15.455a2.697 2.697 0 1 1 5.395 0 2.697 2.697 0 0 1-5.395 0Zm2.698-1.448a1.447 1.447 0 1 0 0 2.895 1.447 1.447 0 0 0 0-2.895Z" fill="currentColor"></path><path d="M8.02 15.455a1.447 1.447 0 0 1 2.311-1.162.625.625 0 1 0 .747-1.002 2.697 2.697 0 1 0-.016 4.34.625.625 0 0 0-.74-1.008 1.447 1.447 0 0 1-2.302-1.168Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 9.455a4 4 0 0 0-4 4v4a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4v-4a4 4 0 0 0-4-4H7Zm10 1.5H7a2.5 2.5 0 0 0-2.5 2.5v4a2.5 2.5 0 0 0 2.5 2.5h10a2.5 2.5 0 0 0 2.5-2.5v-4a2.5 2.5 0 0 0-2.5-2.5Z" fill="currentColor"></path><path d="m14.607 7.114-2.31.84H7.91l6.183-2.25a4 4 0 0 1 5.127 2.391l.143.392a5.465 5.465 0 0 0-1.892-.512 2.501 2.501 0 0 0-2.865-.861Z" fill="currentColor"></path></svg>
+        <span>Brand</span>
+    </div>
+
+    <div class="p-6 flex flex-col items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.24 2.985c-2.735 0-5.04 2.075-5.316 4.788a.199.199 0 0 1-.123.162 5.729 5.729 0 0 0 1.994 11.097 5.727 5.727 0 0 0 5.727-5.727v-.486l1.782 1.782a.75.75 0 0 0 1.06-1.06l-3.062-3.063a.75.75 0 0 0-1.06 0L9.179 13.54a.75.75 0 0 0 1.06 1.06l1.783-1.781v.486A4.227 4.227 0 1 1 6.324 9.34a1.698 1.698 0 0 0 1.092-1.416c.198-1.943 1.855-3.44 3.825-3.44a3.848 3.848 0 0 1 3.785 3.174c.135.764.78 1.366 1.563 1.43 2.146.178 3.855 2.016 3.855 4.216a4.226 4.226 0 0 1-4.227 4.227h-1.914a.75.75 0 0 0 0 1.5h1.914a5.727 5.727 0 0 0 5.727-5.727c0-2.978-2.305-5.468-5.231-5.71a.25.25 0 0 1-.21-.196 5.348 5.348 0 0 0-5.262-4.414Z" fill="currentColor"></path></svg>
+        <span>Uploads</span>
+    </div>
+
+    <div class="p-6 flex flex-col items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.07 3.456a3.135 3.135 0 0 0-4.434 0L10.25 8.843a3.38 3.38 0 0 0-.884 1.55l-.845 3.292c-.205.8.522 1.527 1.322 1.323l3.278-.837a3.384 3.384 0 0 0 1.555-.886L20.07 7.89a3.135 3.135 0 0 0 0-4.434Zm-2.117 4.43 1.057-1.057a1.635 1.635 0 0 0-2.313-2.313l-1.056 1.057 2.312 2.312Zm-1.166 1.166-3.172 3.172c-.24.24-.539.41-.866.493l-2.602.665.67-2.616a1.88 1.88 0 0 1 .492-.862l3.165-3.164 2.313 2.312Z" fill="currentColor"></path><path d="M5.144 15.022a.641.641 0 1 0 0 1.282h13.751a2.109 2.109 0 0 1 0 4.218H9.194a.75.75 0 0 1 0-1.5h9.701a.609.609 0 1 0 0-1.218H5.144a2.141 2.141 0 0 1 0-4.282h1.862v1.5H5.144Z" fill="currentColor"></path></svg>
+        <span>Tools</span>
+    </div>
+
+    <div class="p-6 flex flex-col items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.57 3.363c-1.415 0-2.564 1.159-2.564 2.588v2.824c0 1.429 1.149 2.588 2.565 2.588h2.798c1.416 0 2.564-1.159 2.564-2.588V5.95c0-1.43-1.148-2.588-2.564-2.588H5.57Zm0 1.5c-.574 0-1.064.474-1.064 1.088v2.824c0 .614.49 1.088 1.065 1.088h2.798c.575 0 1.064-.474 1.064-1.088V5.95c0-.614-.49-1.088-1.064-1.088H5.57ZM15.576 3.363c-1.416 0-2.564 1.159-2.564 2.588v2.824c0 1.429 1.148 2.588 2.564 2.588h2.798c1.416 0 2.565-1.159 2.565-2.588V5.95c0-1.43-1.149-2.588-2.565-2.588h-2.798Zm0 1.5c-.575 0-1.064.474-1.064 1.088v2.824c0 .614.49 1.088 1.064 1.088h2.798c.575 0 1.065-.474 1.065-1.088V5.95c0-.614-.49-1.088-1.065-1.088h-2.798ZM5.57 13.383c-1.415 0-2.564 1.159-2.564 2.588v2.824c0 1.43 1.149 2.588 2.565 2.588h2.798c1.416 0 2.564-1.159 2.564-2.588V15.97c0-1.429-1.148-2.588-2.564-2.588H5.57Zm-1.064 2.588c0-.614.49-1.088 1.065-1.088h2.798c.575 0 1.064.474 1.064 1.088v2.824c0 .614-.49 1.088-1.064 1.088H5.57a1.077 1.077 0 0 1-1.065-1.088V15.97Z" fill="currentColor"></path><path d="M16.975 13.414a.75.75 0 0 1 .75.75v2.47h2.469a.75.75 0 1 1 0 1.5h-2.469v2.468a.75.75 0 0 1-1.5 0v-2.469h-2.469a.75.75 0 0 1 0-1.5h2.47v-2.469a.75.75 0 0 1 .75-.75Z" fill="currentColor"></path></svg>
+        <span>Apps</span>
+    </div>
+
+
+    <div class="p-6 flex flex-col items-center gap-2">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.875 4.944c-1.526-.305-2.183-1.04-2.488-2.527a.188.188 0 0 0-.181-.142.188.188 0 0 0-.181.143c-.147.737-.39 1.276-.764 1.675-.027.03-.055.058-.084.085-.052.05-.109.094-.165.139a2.449 2.449 0 0 1-.398.258 3.17 3.17 0 0 1-.294.134c-.061.024-.12.05-.186.072-.12.04-.25.075-.383.108-.072.018-.138.04-.214.055a.19.19 0 0 0-.128.05h.007a.184.184 0 0 0-.07.14c0 .106.086.191.191.191 1.525.305 2.18 1.025 2.485 2.512.016.088.09.157.184.157.09 0 .162-.064.182-.148.016-.08.037-.147.055-.222.034-.14.07-.274.111-.399.022-.065.047-.126.071-.187.043-.108.088-.21.138-.306.047-.09.093-.182.147-.262l.01-.015a2.315 2.315 0 0 1 .315-.366c.393-.377.923-.617 1.64-.764a.19.19 0 1 0 0-.381ZM15.988 6.933c-.193.643-.503 1.018-1.146 1.146a.14.14 0 0 0 0 .28c.476.143.802.352.993.71.004.008.01.015.014.024.06.12.108.255.139.412a.14.14 0 0 0 .28 0c.048-.16.104-.304.17-.431v-.001c.2-.383.494-.617.976-.714a.14.14 0 0 0 0-.28c-.643-.193-1.017-.503-1.146-1.146a.14.14 0 1 0-.28 0Z" fill="currentColor"></path><path d="M20.866 8.104a1.526 1.526 0 0 1-.054.214 1.692 1.692 0 0 1-1.326 1.153c.01.607.011 1.31.011 2.136v.039l-.853-.853a28.039 28.039 0 0 0-.922-.897 1.643 1.643 0 0 1-.985 1.132c.235.215.514.493.876.855l1.884 1.884c-.002 1.475-.013 2.521-.103 3.338-.098.884-.274 1.315-.498 1.613-.17.227-.371.428-.598.598-.298.224-.729.4-1.613.497-.913.102-2.113.104-3.878.104h-1.62c-1.765 0-2.965-.002-3.878-.104-.515-.057-.877-.14-1.147-.244l7.685-7.686c.522-.522.87-.869 1.163-1.103a5.07 5.07 0 0 1 .044-.035c-.226-.144-.685-1.062-1.025-1.1-.353.288-.747.682-1.213 1.148l-7.802 7.802c-.184-.294-.328-.72-.413-1.49-.102-.913-.104-2.113-.104-3.878v-1.62c0-1.765.002-2.965.104-3.878.098-.884.273-1.315.497-1.613.17-.227.371-.428.598-.598.298-.224.729-.4 1.613-.498.913-.101 2.113-.103 3.878-.103h1.62c.789 0 1.464 0 2.052.01a1.692 1.692 0 0 1 1.353-1.452c-.908-.058-2.018-.058-3.405-.058h-1.62c-3.46 0-5.191 0-6.392.901-.34.255-.641.557-.897.897-.9 1.2-.9 2.931-.9 6.392v1.62c0 3.46 0 5.191.9 6.392a4.5 4.5 0 0 0 .897.896c1.2.902 2.931.902 6.392.902h1.62c3.46 0 5.191 0 6.392-.902a4.5 4.5 0 0 0 .897-.896c.901-1.2.901-2.931.901-6.392v-1.62c0-1.55 0-2.753-.08-3.717a4.142 4.142 0 0 0-.05.214Z" fill="currentColor"></path><path d="M8.497 10.917a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="currentColor"></path></svg>
+        <span>Magic Media</span>
+    </div>
+
+   <div class="p-6 flex flex-col items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a9 9 0 0 0 0 18 9 9 0 0 0 0-18Zm0 1.5a7.5 7.5 0 0 1 7.5 7.5c0 .6-.5 1.1-1.1 1.1H13.6v3.6h-3v-3.6H6.6a7.5 7.5 0 0 1-.9-4.8c-.2-.8-.4-1.6-.6-2.4H12Z" fill="currentColor"></path></svg>
+        <span>Audio</span>
+    </div>
+
+
+</div>
+            <div class="w-1/3 bg-gray-200 flex flex-col">
+            <!-- <div class="m-4">
+                <input type="Search" placeholder="+   Search..." class="bg-white hover:bg-gray-400 text-black py-2 px-4 rounded h-10 w-[300px] border-2 border-gray-400">
+            </div>
+            <div class="flex flex-row align-items-center justify-content-center gap-6 ml-4 mt-4">
+                <button class="bg-white hover:bg-blue-400 text-black rounded pt-2 pb-2 pl-5 pr-5 font-bold w-35 h-10 border-2 border-gray-400">Genrate</button>
+                <button class="bg-blue-400 text-black rounded pt-2 pb-2 pl-5 pr-5 font-bold w-35 h-10">Search</button></div>
+               -->
+                <!-- <div class="flex flex-row justify-content-between gap-10 ml-4 mt-4 font-bold">
+                    <div>Recently used</div>
+                    <div>See all</div>
+            </div>
+               <div class=" grid grid-cols-2 mt-4 gap-3 ml-4">
+                 <img src="OIP (2).jpg" alt="" class="h-25 w-42">
+                    <img src="OIP (1).jpg" alt="" class="h-25 w-42">
+               </div>
+                <div class="flex flex-row justify-content-between gap-10 ml-4 mt-4 font-bold">
+                    <div>See all</div>
+            </div>
+                <div class=" grid grid-cols-2 mt-4 gap-4 ml-4">
+                    <img src="OIP.jpg" alt="" class="h-25 w-40">
+                    <img src="OIP (2).jpg" alt="" class="h-25 w-40">
+                    <img src="OIP (2).jpg" alt="" class="h-25 w-40">
+                    <img src="OIP (1).jpg" alt="" class="h-25 w-40">  
+                    <img src="OTI3.jpg" alt="" class="h-25 w-40">
+                    <img src="OIP (2).jpg" alt="" class="h-25 w-40">
+                      <img src="OIP (2).jpg" alt="" class="h-25 w-40">
+                    <img src="OIP (2).jpg" alt="" class="h-25 w-40">
+                    <img src="OIP (1).jpg" alt="" class="h-25 w-40">  
+                    
+                </div>
+         -->
+
+                <!-- Search Box -->
+<div class="mx-4 mt-4">
+
+    <div class="w-[340px] h-14 bg-white border border-purple-200 rounded-2xl flex items-center justify-between px-5 shadow-sm">
+
+        <!-- Left -->
+        <div class="flex items-center gap-4 text-gray-400">
+
+            <i class="fa-solid fa-plus text-xl"></i>
+
+            <input 
+            type="text"
+            placeholder="Describe your ideal design"
+            class="outline-none text-gray-500 w-52 text-[17px]">
+
+        </div>
+
+        <!-- Right -->
+        <i class="fa-solid fa-microphone text-gray-600 text-xl cursor-pointer"></i>
+
+    </div>
+
+</div>
+
+<!-- Buttons -->
+<div class="flex gap-4 px-4 mt-6">
+
+    <!-- Generate -->
+    <button class="w-44 h-12 bg-white border border-gray-300 rounded-2xl font-semibold text-[20px] flex items-center justify-center gap-3 shadow-sm">
+        <i class="fa-solid fa-wand-magic-sparkles text-blue-500"></i>
+        <span>Generate</span>
+
+    </button>
+
+    <!-- Search -->
+    <button class="w-44 h-12 rounded-2xl text-white font-semibold text-[20px] bg-gradient-to-r from-purple-500 to-violet-600 shadow-md">
+
+        Search
+
+    </button>
+
+</div>
+
+         <!-- Recently Used Heading -->
+<div class="flex justify-between items-center px-4 mt-5 font-semibold text-[20px]">
+    <div>Recently used</div>
+    <div class="text-gray-600 text-[16px] cursor-pointer">See all</div>
+</div>
+
+<!-- Recently Used Images -->
+<div class="grid grid-cols-2 gap-4 px-4 mt-4">
+
+    <img src="i1.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i2.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+</div>
+
+<!-- All Results Heading -->
+<div class="flex justify-between items-center px-4 mt-8 font-semibold text-[20px]">
+
+    <div>All results</div>
+
+</div>
+
+<!-- All Images -->
+<div class="grid grid-cols-2 gap-4 px-4 mt-4 overflow-y-auto h-[520px] pr-2">
+
+    <img src="i3.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i4.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i5.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i6.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i7.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i8.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i9.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i1.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+    <img src="i2.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+     <img src="i4.jpg"
+    class="w-full h-28 object-cover rounded-sm">
+
+
+</div>
+        </div>
+            <div class="w-1/2 h-screen flex flex-col items-center bg-gray-300 relative w-full">
+
+    <!-- Top Toolbar -->
+    <div class="w-auto h-10 bg-white rounded m-3 flex gap-5 items-center px-7 font-bold shadow">
+
+        <div>Edit</div>
+
+        <div class="h-5 w-5 bg-red-500 rounded-full"></div>
+
+        <i class="fa-solid fa-bars"></i>
+
+        <i class="fa-solid fa-less-than"></i>
+
+        <i class="fa-solid fa-grip"></i>
+
+        <div>Effect</div>
+
+        <div>Animation</div>
+
+        <div>position</div>
+
+        <i class="fa-solid fa-paint-roller"></i>
+
+    </div>
+
+    <!-- Shapes Section -->
+    <div class="grid grid-cols-4 place-items-center gap-x-3 gap-y-6 w-[1400px] h-[850px] bg-[#f3f3f3] mt-8 p-10">
+
+        <!-- Circle -->
+        <div class="w-40 h-40 bg-lime-300 rounded-full"></div>
+
+        <!-- Square -->
+        <div class="w-40 h-40 bg-yellow-300"></div>
+
+      <!-- Triangle -->
+<div class="w-0 h-0 
+  border-l-[90px] border-l-transparent
+  border-r-[90px] border-r-transparent
+  border-b-[180px] border-b-orange-500">
+</div>
+
+        <!-- Pentagon -->
+        <div class="w-40 h-40 bg-blue-800"
+            style="clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);">
+        </div>
+
+        <!-- Plus -->
+<div class="relative w-15 h-45 bg-black">
+    <div class="absolute top-16 -left-16 w-48 h-12 bg-black"></div>
+</div>
+
+        <!-- Parallelogram -->
+        <div class="w-40 h-40 bg-purple-400 skew-x-[20deg]"></div>
+
+        <!-- Medium Arrow -->
+  <div class="relative w-20 h-26 bg-violet-500 mt-16">
+
+    <!-- Arrow Head -->
+    <div class="absolute -top-20 -left-10
+      w-0 h-0
+      border-l-[80px] border-l-transparent
+      border-r-[80px] border-r-transparent
+      border-b-[80px] border-b-violet-500">
+    </div>
+
+  </div>
+<!-- Border Box -->
+<div class="absolute bottom-103 right-37 h-42 w-42 border-2 border-violet-500">
+
+    <!-- Corner Circles -->
+    <div class="w-4 h-4 bg-white border-2 border-gray-300 rounded-full absolute -top-2 -left-2"></div>
+
+    <div class="w-4 h-4 bg-white border-2 border-gray-300 rounded-full absolute -top-2 -right-2"></div>
+
+    <div class="w-4 h-4 bg-white border-2 border-gray-300 rounded-full absolute -bottom-2 -left-2"></div>
+
+    <div class="w-4 h-4 bg-white border-2 border-gray-300 rounded-full absolute -bottom-2 -right-2"></div>
+
+    <!-- Side Circles -->
+    <div class="w-3 h-7 bg-white border-2 border-gray-300 rounded-full absolute top-1/2 -left-2 -translate-y-1/2"></div>
+
+    <div class="w-3 h-7 bg-white border-2 border-gray-300 rounded-full absolute top-1/2 -right-2 -translate-y-1/2"></div>
+
+    <div class="w-7 h-3 bg-white border-2 border-gray-300 rounded-full absolute left-1/2 -top-2 -translate-x-1/2"></div>
+
+    <div class="w-7 h-3 bg-white border-2 border-gray-300 rounded-full absolute left-1/2 -bottom-2 -translate-x-1/2"></div>
+
+</div>
+
+
+<!-- Toolbar -->
+<div class="w-40 bg-gray-300 absolute bottom-150 right-36 h-10 
+border border-gray-300 pl-4 pr-4 rounded-2xl 
+flex items-center justify-center gap-3">
+
+    <div><i class="fa-regular fa-message"></i></div>
+
+    <div><i class="fa-solid fa-lock"></i></div>
+
+    <div><i class="fa-regular fa-copy"></i></div>
+
+
+    <div><i class="fa-regular fa-trash-can"></i></div>
+
+    <div><i class="fa-solid fa-ellipsis"></i></div>
+
+</div>
+
+
+<!-- Heart -->
+<div class="relative w-24 h-24 bg-red-500 rotate-[-45deg]">
+
+    <!-- Left Circle -->
+    <div class="absolute w-24 h-24 bg-red-500 rounded-full -top-12 left-0"></div>
+
+    <!-- Right Circle -->
+    <div class="absolute w-24 h-24 bg-red-500 rounded-full top-0 left-12"></div>
+
+</div>
+
+    <div class="h-3 w-[98%] rounded border-b-2 border-gray-300 bg-gray-500 absolute bottom-50 "></div>
+
+    <!-- Bottom Footer -->
+    <div class="absolute bottom-14 left-0 w-full h-35 bg-[#e9e9eb] border-t border-gray-300 flex items-center justify-between px-6">
+
+        <!-- Left -->
+        <div class="flex items-center gap-6 text-gray-600 font-semibold">
+
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-note-sticky mt-28"></i>
+                <span class="mt-28">Notes</span>
+            </div>
+
+            <div class="flex items-center gap-1">
+                <i class="fa-regular fa-clock mt-28"></i>
+                <span class="mt-28">Timer</span>
+            </div>
+
+        </div>
+
+        <!-- Center -->
+        <div class="flex items-center gap-4">
+
+            <!-- Shapes Preview -->
+            <div class="w-35 h-16 bg-white rounded-2xl border-2 border-gray-400 p-2 mb-11">
+
+                <div class="grid grid-cols-4 gap-1 place-items-center">
+
+                    <div class="w-4 h-4 rounded-full bg-lime-300"></div>
+
+                    <div class="w-4 h-4 bg-yellow-300"></div>
+
+                    <div class="w-0 h-0 
+                        border-l-[8px] border-l-transparent
+                        border-r-[8px] border-r-transparent
+                        border-b-[14px] border-b-orange-500">
+                    </div>
+
+                    <div class="w-4 h-4 bg-blue-800"
+                        style="clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);">
+                    </div>
+
+                    <div class="relative w-2 h-5 bg-black">
+                        <div class="absolute top-1.5 -left-1.5 w-5 h-2 bg-black"></div>
+                    </div>
+
+                    <div class="w-4 h-4 bg-purple-400 skew-x-[20deg]"></div>
+
+                    <div class="relative w-2 h-3 bg-violet-500 pt-1 mt-2">
+                        <div class="absolute -top-2 -left-1
+                            w-0 h-0
+                            border-l-[8px] border-l-transparent
+                            border-r-[8px] border-r-transparent
+                            border-b-[10px] border-b-violet-500">
+                        </div>
+                    </div>
+
+                    <div class="relative w-3 h-3 rotate-[-45deg] bg-red-500">
+                        <div class="absolute w-3 h-3 bg-red-500 rounded-full -top-1.5 left-0"></div>
+                        <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 left-1.5"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Plus Box -->
+            <div class="w-35 h-16 bg-[#efefef] rounded-2xl flex items-center justify-evenly gap-6 text-3xl mb-11">
+                <i class="fa-solid fa-plus text-gray-600 text-[17px]"></i>
+                <i class="fa-solid fa-angle-down text-base mt-1"></i>
+            </div>
+
+        </div>
+
+        <!-- Right -->
+        <div class="flex items-center gap-5 text-gray-600 font-semibold mt-16">
+
+            <!-- Zoom -->
+            <div class="flex items-center gap-3 pt-12">
+
+                <div class="w-40 h-2 bg-gray-300 rounded-full relative">
+
+                    <div class="absolute left-20 -top-1 w-5 h-5 bg-white border rounded-full"></div>
+
+                </div>
+
+                <span>53%</span>
+
+            </div>
+
+            <!-- Pages -->
+            <div class="flex items-center gap-2 bg-gray-200 px-3 py-2 rounded-xl pt-12">
+
+                <i class="fa-regular fa-rectangle-list"></i>
+
+                <span>Pages</span>
+
+            </div>
+
+            <span class="pt-12">1 / 1</span>
+
+            <i class="fa-solid fa-expand pt-12"></i>
+
+             <i class="fa-solid fa-table-cells-large pt-12" style="color:#666;"></i>
+
+            <i class="fa-regular fa-trash-can pt-12"></i>
+
+        </div>
+
+    </div>
+
+</div>
+            </div>
+        </div>
+    </body>
+</html>

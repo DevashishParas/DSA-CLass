@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Canva Clone</title>
+
+<link rel="stylesheet" href="canva2.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================
+     TOP NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-left">
+
+        <a href="#">File</a>
+
+        <a href="#">Resize</a>
+
+        <div class="editing">
+            <i class="fa-solid fa-pen"></i>
+            <span>Editing</span>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+
+        <i class="fa-solid fa-rotate-left nav-icon"></i>
+
+        <i class="fa-solid fa-rotate-right nav-icon"></i>
+
+        <i class="fa-solid fa-cloud-arrow-up nav-icon"></i>
+
+    </div>
+
+    <div class="nav-right">
+
+        <span class="sample-name">
+            Sample
+        </span>
+
+        <button class="trial-btn">
+            👑 Start your trial for ₹0
+        </button>
+
+        <div class="profile">
+            <img src="" alt="">
+        </div>
+
+        <div class="small-btn">
+            <i class="fa-solid fa-chart-simple"></i>
+        </div>
+
+        <div class="small-btn">
+            <i class="fa-regular fa-comment"></i>
+        </div>
+
+        <button class="present-btn">
+            Present
+            <i class="fa-solid fa-angle-down"></i>
+        </button>
+
+        <button class="share-btn">
+            Share
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- =========================
+     MAIN APP
+========================= -->
+
+<div class="app">
+
+    <!-- =====================
+         SIDEBAR
+    ====================== -->
+
+    <aside class="sidebar">
+
+        <div class="side-item active">
+            <i class="fa-solid fa-table-columns"></i>
+            <span>Templates</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-solid fa-shapes"></i>
+            <span>Elements</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-solid fa-t"></i>
+            <span>Text</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-solid fa-camera"></i>
+            <span>Brand</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Uploads</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-solid fa-pen-ruler"></i>
+            <span>Tools</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-regular fa-folder"></i>
+            <span>Projects</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span>Apps</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-regular fa-image"></i>
+            <span>Magic Media</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-solid fa-music"></i>
+            <span>Audio</span>
+        </div>
+
+        <div class="side-item">
+            <i class="fa-regular fa-circle"></i>
+            <span>Videoforme</span>
+        </div>
+
+    </aside>
+
+    <!-- =====================
+         LEFT PANEL
+    ====================== -->
+
+    <section class="left-panel">
+
+        <!-- Search -->
+
+        <div class="search-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-plus"></i>
+
+                <input
+                type="text"
+                placeholder="Describe your ideal design">
+
+                <i class="fa-solid fa-microphone"></i>
+
+            </div>
+
+            <div class="search-buttons">
+
+                <button class="generate-btn">
+                    ✨ Generate
+                </button>
+
+                <button class="search-btn">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Recent -->
+
+        <div class="section-header">
+
+            <h3>Recently used</h3>
+
+            <span>See all</span>
+
+        </div>
+
+        <div class="recent-grid">
+
+            <div class="image-card"></div>
+
+            <div class="image-card"></div>
+
+        </div>
+
+        <!-- All Results -->
+
+        <h3 class="all-results">
+            All results
+        </h3>
+
+        <div class="template-grid">
+            <div class="template-card">
+              <img src="i1.jpg"alt="">
+            </div>
+            <div class="template-card"></div>
+
+            <div class="template-card"></div>
+            <div class="template-card"></div>
+
+            <div class="template-card"></div>
+            <div class="template-card"></div>
+
+            <div class="template-card"></div>
+            <div class="template-card"></div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================
+         WORKSPACE
+    ====================== -->
+
+    <main class="workspace">
+
+        <!-- Toolbar -->
+
+        <div class="toolbar">
+
+            <span>Edit</span>
+
+            <div class="red-color"></div>
+
+            <i class="fa-solid fa-bars"></i>
+
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+
+            <i class="fa-solid fa-grip"></i>
+
+            <span>Effects</span>
+
+            <span>Animate</span>
+
+            <span>Position</span>
+
+            <i class="fa-solid fa-paint-roller"></i>
+
+        </div>
+
+        <!-- Canvas -->
+
+        <div class="canvas">
+
+            <!-- Top Row -->
+
+            <div class="circle"></div>
+
+            <div class="square"></div>
+
+            <div class="triangle"></div>
+
+            <div class="pentagon"></div>
+
+            <!-- Bottom Row -->
+
+            <div class="plus-shape"></div>
+
+            <div class="parallelogram"></div>
+
+            <div class="arrow-up"></div>
+
+            <div class="heart-box">
+
+                <div class="heart"></div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-left">
+
+        <span>
+            <i class="fa-regular fa-note-sticky"></i>
+            Notes
+        </span>
+
+        <span>
+            <i class="fa-regular fa-clock"></i>
+            Timer
+        </span>
+
+    </div>
+
+    <div class="footer-center">
+
+        <div class="page-preview">
+
+            <div class="mini-page"></div>
+
+        </div>
+
+        <button class="page-add">
+            +
+        </button>
+
+        <button class="page-dropdown">
+
+            <i class="fa-solid fa-angle-down"></i>
+
+        </button>
+
+    </div>
+
+    <div class="footer-right">
+
+        <div class="zoom-slider"></div>
+
+        <span>53%</span>
+
+        <span>Pages</span>
+
+        <span>1 / 1</span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

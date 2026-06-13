@@ -1,0 +1,34 @@
+-Functions in java Script
+
+
+        function parameters and variables Arguments
+
+        anonymous function 
+
+        return statement 
+
+        Higher order function
+
+        common high order function
+
+
+
+- filter 
+
+
+        Lambda Function 
+
+        traditional Function
+
+        
+
+
+- variable hoisitng with var
+
+- Temporal dead zone ;
+
+function hoisitng
+
+
+- closure 
+
