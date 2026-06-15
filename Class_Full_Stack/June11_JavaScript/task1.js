@@ -6,8 +6,7 @@ const students = [
 
 const averages = students.map(student => ({
     name: student.name,
-    average:
-    student.marks.reduce((sum, mark) => sum + mark, 0) /
+    average: student.marks.reduce((sum, mark) => sum + mark, 0) /
     student.marks.length
 }));
 

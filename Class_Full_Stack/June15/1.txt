@@ -1,0 +1,44 @@
+- Closures
+
+
+- Relation  between HOF and Closures  (higher order fnction)
+
+
+- VIVA Questions 
+
+
+        hof 
+        lambda
+        hoisting 
+        Closures
+        closures used 
+
+
+            datas hiding
+            encapsulations
+            private variables 
+            funstion factories 
+            event handlers
+            callbacks
+            memorizations 
+
+
+    - array in js
+
+    using array literal
+
+    let fruits=["Apple", "Banana", "Mango"];
+
+
+    using array constructor
+
+    let fruits = newArray("Apple","Banana","Mango");
+
+
+- Looping through array
+
+
+
+        -  Advanced array method 
+
+        
