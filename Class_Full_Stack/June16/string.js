@@ -93,3 +93,40 @@ console.log(e.slice(2,19));
 
 
 console.log(e.substring(1,23));
+
+
+
+
+
+//replace 
+//selected index me replace 
+
+
+console.log(e.replace("fhd","ooo"));
+
+
+
+
+
+//replaceall
+//string me jaha jaha hoga vaha replace hoga 
+
+console.log(e.replaceAll("bh","uu"));
+
+
+
+
+
+
+//spilt
+//jaha jaha space hogi un sabko new array ya string bana dega 
+
+console.log(e.split(" "));
+console.log(e);
+
+
+
+
+
+
+//
