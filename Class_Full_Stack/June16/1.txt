@@ -2,4 +2,11 @@
 
     properties
 
-    
+
+    - Minor project class by vishal sir
+
+        objective 
+        aim
+        abstract
+
+        
