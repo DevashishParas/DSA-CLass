@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Insurance Portal</title>
+    <link rel="stylesheet" href="OIP.css">
+    <link rel="stylesheet" href="OIP.js">
+</head>
+<body>
+
+    <nav>
+        <h2>Insurance Portal</h2>
+
+        <ul>
+            <li>Home</li>
+            <li>Policies</li>
+            <li>Calculator</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Online Insurance Portal</h1>
+        <p>Protect Your Future With The Right Insurance Plan</p>
+    </section>
+
+    <div class="container">
+
+        <h2 class="section-title">Search Insurance Plans</h2>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search Policy..."
+        >
+
+        <div class="cards" id="plans"></div>
+
+    </div>
+
+    <div class="calculator">
+
+        <h2>Premium Calculator</h2>
+
+        <input
+            type="number"
+            id="age"
+            placeholder="Enter Your Age"
+        >
+
+        <button class="btn" onclick="calculatePremium()">
+            Calculate Premium
+        </button>
+
+        <div class="result" id="premiumResult"></div>
+
+    </div>
+
+    <div class="contact">
+
+        <h2>Contact Us</h2>
+
+        <input type="text" placeholder="Your Name">
+
+        <input type="email" placeholder="Your Email">
+
+        <textarea rows="5" placeholder="Message"></textarea>
+
+        <button class="btn">Submit</button>
+
+    </div>
+
+    <footer>
+        © 2026 Online Insurance Portal
+    </footer>
+
+    <script src="OIP.js"></script>
+
+</body>
+</html>
