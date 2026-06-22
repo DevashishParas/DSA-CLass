@@ -11,3 +11,12 @@ const promise= new Promise((res, rej) =>{
 });
 
 console.log(promise);
+
+promise.then(result=>{
+    console.log(result);
+
+})
+
+.catch(error=>{
+    console.log
+})
