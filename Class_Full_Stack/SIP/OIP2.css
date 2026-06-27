@@ -1,0 +1,222 @@
+```css
+/* =======================================
+   NEW FEATURES CSS
+   (Add this BELOW your existing CSS)
+======================================= */
+
+
+/* Navigation Buttons */
+
+nav .btn{
+    padding:8px 14px;
+}
+
+
+/* Sort Button */
+
+#sortBtn{
+    margin-right:10px;
+    margin-bottom:20px;
+}
+
+
+/* Premium Filter */
+
+#filterPremium{
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin-bottom:20px;
+}
+
+
+/* Search Result Counter */
+
+#policyCount{
+    margin:15px 0;
+    color:#1e3a8a;
+    font-weight:bold;
+}
+
+
+/* Loading Text */
+
+#loading{
+    display:none;
+    text-align:center;
+    color:#2563eb;
+    font-size:20px;
+    margin:20px 0;
+}
+
+
+/* Contact Form Message */
+
+#formMessage{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+
+/* Apply Button After Success */
+
+.applied{
+    background:green;
+}
+
+
+/* Dark Mode */
+
+.dark{
+    background:#111;
+    color:white;
+}
+
+
+/* Navigation */
+
+.dark nav{
+    background:#000;
+}
+
+
+/* Hero */
+
+.dark .hero{
+    background:linear-gradient(to right,#222,#444);
+}
+
+
+/* Cards */
+
+.dark .card{
+    background:#222;
+    color:white;
+}
+
+
+/* Calculator */
+
+.dark .calculator{
+    background:#222;
+    color:white;
+}
+
+
+/* Contact */
+
+.dark .contact{
+    background:#222;
+    color:white;
+}
+
+
+/* Inputs */
+
+.dark input,
+.dark textarea,
+.dark select{
+    background:#333;
+    color:white;
+    border:1px solid #555;
+}
+
+
+/* Footer */
+
+.dark footer{
+    background:#000;
+}
+
+
+/* Hover Effect For Cards */
+
+.card{
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+}
+
+
+/* Button Hover */
+
+.btn{
+
+    transition:0.3s;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+/* Disabled Button */
+
+.btn:disabled{
+
+    background:gray;
+
+    cursor:not-allowed;
+
+}
+
+
+/* Contact Inputs Focus */
+
+.contact input:focus,
+.contact textarea:focus,
+.calculator input:focus,
+#search:focus{
+
+    outline:none;
+
+    border:2px solid #2563eb;
+
+}
+
+
+/* Responsive Design */
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    nav ul{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .cards{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .card{
+
+        width:90%;
+
+    }
+
+}
+```

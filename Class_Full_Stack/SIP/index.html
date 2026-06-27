@@ -1,0 +1,211 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Insurance Portal</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <h2>Insurance Portal</h2>
+
+        <ul>
+
+            <li id="homeLink">Home</li>
+            <li id="policyLink">Policies</li>
+            <li id="calculatorLink">Calculator</li>
+            <li id="contactLink">Contact</li>
+
+        </ul>
+
+        <button class="btn" id="darkModeBtn">
+            🌙 Dark Mode
+        </button>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>Online Insurance Portal</h1>
+
+        <p>
+            Protect Your Future With The Right Insurance Plan
+        </p>
+
+    </section>
+
+
+    <!-- ================= POLICIES ================= -->
+
+    <section class="container">
+
+        <h2 class="section-title">
+
+            Search Insurance Plans
+
+        </h2>
+
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search Policy..."
+        >
+
+
+        <div class="toolbar">
+
+            <button class="btn" id="sortBtn">
+
+                Sort by Premium
+
+            </button>
+
+
+            <select id="filterPremium">
+
+                <option value="all">
+                    All Premiums
+                </option>
+
+                <option value="below500">
+                    Below ₹500
+                </option>
+
+                <option value="500to700">
+                    ₹500 - ₹700
+                </option>
+
+                <option value="above700">
+                    Above ₹700
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <p id="policyCount"></p>
+
+        <div id="loading">
+            Loading Policies...
+        </div>
+
+        <div
+            class="cards"
+            id="plans">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CALCULATOR ================= -->
+
+    <section class="calculator">
+
+        <h2>
+
+            Premium Calculator
+
+        </h2>
+
+        <input
+            type="number"
+            id="age"
+            placeholder="Enter Your Age"
+        >
+
+
+        <button
+            class="btn"
+            id="calculateBtn">
+
+            Calculate Premium
+
+        </button>
+
+
+        <div
+            class="result"
+            id="premiumResult">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact">
+
+        <h2>
+
+            Contact Us
+
+        </h2>
+
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+        >
+
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+        >
+
+
+        <textarea
+            rows="5"
+            id="message"
+            placeholder="Your Message">
+
+        </textarea>
+
+
+        <button
+            class="btn"
+            id="submitBtn">
+
+            Submit
+
+        </button>
+
+
+        <p id="formMessage"></p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="footer">
+
+        © 2026 Online Insurance Portal
+
+    </footer>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
+```
