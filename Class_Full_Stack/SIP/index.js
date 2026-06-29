@@ -1,9 +1,3 @@
-// ==========================================
-// Online Insurance Portal - Part 1
-// Policies, Promise, Search, Sort & Filter
-// ==========================================
-
-// ---------- Policy Data ----------
 
 const policies = [
     {
@@ -33,8 +27,6 @@ const policies = [
 ];
 
 
-// ---------- DOM Elements ----------
-
 const plans = document.getElementById("plans");
 const search = document.getElementById("search");
 const sortBtn = document.getElementById("sortBtn");
@@ -43,7 +35,7 @@ const loading = document.getElementById("loading");
 const policyCount = document.getElementById("policyCount");
 
 
-// ---------- Display Policies ----------
+
 
 function displayPolicies(data){
 
@@ -76,8 +68,6 @@ function displayPolicies(data){
 
 
 
-// ---------- Promise ----------
-
 function loadPolicies(){
 
     loading.style.display = "block";
@@ -100,7 +90,6 @@ loadPolicies().then(displayPolicies);
 
 
 
-// ---------- Search ----------
 
 search.addEventListener("keyup",()=>{
 
@@ -130,7 +119,7 @@ search.addEventListener("keyup",()=>{
 
 
 
-// ---------- Sort ----------
+
 
 sortBtn.addEventListener("click",()=>{
 
@@ -146,7 +135,7 @@ sortBtn.addEventListener("click",()=>{
 
 
 
-// ---------- Premium Filter ----------
+// this will sort the premium 
 
 filter.addEventListener("change",()=>{
 
@@ -202,7 +191,7 @@ filter.addEventListener("change",()=>{
 
 
 
-// ---------- Apply Button ----------
+
 
 document.addEventListener("click",event=>{
 
@@ -226,7 +215,6 @@ document.addEventListener("click",event=>{
 
 
 
-// ---------- Higher Order Function Examples ----------
 
 console.log(
 
@@ -257,14 +245,7 @@ p=>console.log(p.name)
 );
 
 
-// ==========================================
-// Online Insurance Portal - Part 2
-// Calculator, Contact Form, Dark Mode
-// Navigation & Footer
-// ==========================================
 
-
-// ---------- DOM Elements ----------
 
 const age = document.getElementById("age");
 const premiumResult = document.getElementById("premiumResult");
@@ -274,11 +255,11 @@ const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 const formMessage = document.getElementById("formMessage");
 
-const darkBtn = document.getElementById("darkModeBtn");
+// const darkBtn = document.getElementById("darkModeBtn");
 
 
 
-// ---------- Premium Calculator ----------
+
 
 document
 .getElementById("calculateBtn")
@@ -340,7 +321,7 @@ function calculatePremium(){
 
 
 
-// ---------- Contact Form ----------
+
 
 document
 .getElementById("submitBtn")
@@ -400,25 +381,25 @@ function submitForm(){
 
 
 
-// ---------- Dark Mode ----------
-
-darkBtn.addEventListener("click",()=>{
-
-    document.body.classList.toggle("dark");
-
-    darkBtn.textContent =
-
-    document.body.classList.contains("dark")
-
-    ? "☀️ Light Mode"
-
-    : "🌙 Dark Mode";
-
-});
 
 
+// darkBtn.addEventListener("click",()=>{
 
-// ---------- Smooth Navigation ----------
+//     document.body.classList.toggle("dark");
+
+//     darkBtn.textContent =
+
+//     document.body.classList.contains("dark")
+
+//     ? "☀️ Light Mode"
+
+//     : "🌙 Dark Mode";
+
+// });
+
+
+
+
 
 const links = {
 
@@ -457,7 +438,7 @@ for(const id in links){
 
 
 
-// ---------- Dynamic Footer ----------
+
 
 document.getElementById("footer").innerHTML =
 
@@ -465,7 +446,7 @@ document.getElementById("footer").innerHTML =
 
 
 
-// ---------- Browser Information ----------
+
 
 console.log(
 
@@ -485,7 +466,7 @@ navigator.platform
 
 
 
-// ---------- String Method Examples ----------
+
 
 const title = "Online Insurance Portal";
 
@@ -497,7 +478,7 @@ console.log(title.replace("Portal","System"));
 
 
 
-// ---------- Higher Order Function Examples ----------
+
 
 console.log(
 
@@ -522,7 +503,7 @@ p=>p.premium>0
 
 
 
-// ---------- Project Loaded ----------
+
 
 window.addEventListener("load",()=>{
 
