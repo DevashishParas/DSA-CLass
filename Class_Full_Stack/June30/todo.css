@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(211, 211, 211);
+    font-family: Arial;
+}
+
+.container {
+    width: 400px;
+    background-color: white;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 250px;
+    padding: 8px;
+}
+
+#addBtn {
+    padding: 8px;
+
+}
+
+li {
+    background-color: whitesmoke;
+    border: 1px solid gray;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+
+
+
